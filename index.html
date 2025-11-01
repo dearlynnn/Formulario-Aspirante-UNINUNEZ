@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario UNINUNEZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">Orden de Ingreso</h1>
+            <div class="logo">U</div>
+        </div>
+
+        <!-- Mensaje de Éxito -->
+        <div id="successMessage" class="success-message hidden">
+            <span class="success-icon">✓</span>
+            <span>¡Formulario enviado correctamente!</span>
+        </div>
+
+        <!-- Formulario Principal -->
+        <form id="mainForm" class="glass-container">
+            
+            <!-- SECCIÓN 1: DATOS BÁSICOS -->
+            <div class="form-section">
+                <h2 class="section-title">Datos Básicos</h2>
+                <div class="form-grid">
+                    
+                    <!-- Tipo de Documento -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            Tipo de Documento <span class="required">*</span>
+                        </label>
+                        <select id="tipoDoc" name="tipoDoc" class="form-select">
+                            <option value="">Selecciona tipo</option>
+                            <option value="CC">Tarjeta de identidad (TI)</option>
+                            <option value="CC">Cédula de Ciudadanía (CC)</option>
+                            <option value="CE">Cédula de Extranjería (CE)</option>
+                            <option value="PA">Pasaporte (PA)</option>
+                        </select>
+                        <p id="error-tipoDoc" class="error-message"></p>
+                    </div>
+
+                    <!-- Número de Documento -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            Número de Documento <span class="required">*</span>
+                        </label>
+                        <input type="text" id="numDoc" name="numDoc" placeholder="123456789" class="form-input">
+                        <p id="error-numDoc" class="error-message"></p>
+                    </div>
+
+                    <!-- Nombres -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            Nombres (Primer y Segundo) <span class="required">*</span>
+                        </label>
+                        <input type="text" id="nombres" name="nombres" placeholder="Ej: Juan Carlos" class="form-input">
+                        <p id="error-nombres" class="error-message"></p>
+                    </div>
+
+                    <!-- Apellidos -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            Apellidos (Primer y Segundo) <span class="required">*</span>
+                        </label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Ej: García López" class="form-input">
+                        <p id="error-apellidos" class="error-message"></p>
+                    </div>
+
+                    <!-- Sexo Biológico -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            Sexo Biológico <span class="required">*</span>
+                        </label>
+                        <select id="sexo" name="sexo" class="form-select">
+                            <option value="">Selecciona sexo</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        <p id="error-sexo" class="error-message"></p>
+                    </div>
+
+                    <!-- Fecha de Nacimiento -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            Fecha de Nacimiento (DD/MM/YYYY) <span class="required">*</span>
+                        </label>
+                        <input type="text" id="fechaNac" name="fechaNac" placeholder="01/01/1990" maxlength="10" class="form-input">
+                        <p id="error-fechaNac" class="error-message"></p>
+                    </div>
+
+                    <!-- Edad -->
+                    <div class="form-group">
+                        <label class="form-label">Edad</label>
+                        <input type="text" id="edad" name="edad" placeholder="20" class="form-input">
+                        <p id="error-edad" class="error-message"></p>
+                    </div>
+
+                    <!-- Nacionalidad -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            Nacionalidad <span class="required">*</span>
+                        </label>
+                        <select id="nacionalidad" name="nacionalidad" class="form-select">
+                            <option value="">Selecciona nacionalidad</option>
+                            <option value="Colombiano">Colombiano</option>
+                            <option value="Extranjero">Extranjero</option>
+                        </select>
+                        <p id="error-nacionalidad" class="error-message"></p>
+                    </div>
+
+                    <!-- Teléfono Fijo -->
+                    <div class="form-group">
+                        <label class="form-label">Teléfono Fijo</label>
+                        <input type="text" id="telefonoFijo" name="telefonoFijo" placeholder="6012345678" class="form-input">
+                        <p id="error-telefonoFijo" class="error-message"></p>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group form-group-full">
+                        <label class="form-label">
+                            Correo Electrónico <span class="required">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" class="form-input">
+                        <p id="error-email" class="error-message"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: CARRERA A LA QUE ASPIRAS -->
+            <div class="form-section">
+                <h2 class="section-title">Carrera a la que Aspiras</h2>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="carrera" value="Medicina" class="checkbox-input">
+                        <span>Medicina</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="carrera" value="Enfermería" class="checkbox-input">
+                        <span>Enfermería</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="carrera" value="Odontología" class="checkbox-input">
+                        <span>Odontología</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="carrera" value="Bacteriología" class="checkbox-input">
+                        <span>Bacteriología</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="carrera" value="Instrumentación Quirúrgica" class="checkbox-input">
+                        <span>Instrumentación Quirúrgica</span>
+                    </label>
+                </div>
+                <p id="error-carrera" class="error-message"></p>
+            </div>
+
+            <!-- SECCIÓN 3: OCUPACIÓN -->
+            <div class="form-section">
+                <h2 class="section-title">Ocupación</h2>
+                
+                <!-- ¿Trabaja actualmente? -->
+                <div class="form-group">
+                    <label class="form-label">
+                        ¿Trabaja actualmente? <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="trabaja" value="Sí" class="radio-input">
+                            <span>Sí</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="trabaja" value="No" class="radio-input">
+                            <span>No</span>
+                        </label>
+                    </div>
+                    <p id="error-trabaja" class="error-message"></p>
+                </div>
+
+                <!-- Ingresos Mensuales (Condicional) -->
+                <div id="incomesSection" class="form-group hidden">
+                    <label class="form-label">
+                        Ingresos Mensuales (SMLV) <span class="required">*</span>
+                    </label>
+                    <select id="ingresos" name="ingresos" class="form-select">
+                        <option value="">Selecciona un rango</option>
+                        <option value="1-2 SMLV">1 - 2 SMLV</option>
+                        <option value="3-4 SMLV">3 - 4 SMLV</option>
+                        <option value="5+ SMLV">5 + SMLV</option>
+                    </select>
+                    <p id="error-ingresos" class="error-message"></p>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-primary">Enviar Formulario</button>
+                <button type="reset" id="clearBtn" class="btn btn-secondary">Limpiar</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
